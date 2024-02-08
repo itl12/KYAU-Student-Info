@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h1 class="py-2 text-bg-success text-center">KYAU STUDENT CLUBS</h1>
+
+    
+        
+        
+<div class="container">
+    {% for club, member_count in club_details.items %}
+        <div class="my-3 mx-auto py-3 px-2 border-1 border rounded-3" style="max-width: 600px;">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ club }}</h5>
+                <small class="text-body-secondary"><strong>{{ member_count }} Member{{ member_count|pluralize }}</strong></small>
+            </div>
+            <a href="{% url 'general:club_details' pk=club.id %}" class="my-3 btn btn-success btn-sm">View details</a>
+        </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}
