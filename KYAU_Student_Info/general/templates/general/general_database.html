@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container mt-4">
+<a href="{% url 'general:add_in_general_database' %}" class="btn btn-success">Add new student</a>
+<h4 class="mt-2 text-center">List of KYAU students</h4>
+
+<div class="overflow-x-auto">
+    <table class="table table-bordered">
+        <tr>
+            <th>Department</th>
+            <th>Batch</th>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Email</th>
+            {% for club in all_clubs %}
+            <th>{{ club.club_name }}</th>
+            {% endfor %}
+        </tr>
+        {% for student_with_clubs in students_with_clubs %}
+        <tr>
+            <td>{{ student_with_clubs.student.std_dept }}</td>
+            <td>{{ student_with_clubs.student.std_batch }}</td>
+            <td>{{ student_with_clubs.student.std_name }}</td>
+            <td>{{ student_with_clubs.student.std_id }}</td>
+            <td>{{ student_with_clubs.student.std_email }}</td>
+            {% for club in all_clubs %}
+                {% if club in student_with_clubs.clubs %}
+                    <td>Yes</td>
+                {% else %}
+                    <td></td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    
+</div>
+
+</div>
+
+
+
+{% endblock %}

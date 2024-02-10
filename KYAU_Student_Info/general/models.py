@@ -22,7 +22,8 @@ class General_Database(models.Model):
     std_dept = models.ForeignKey(Department, on_delete=models.CASCADE)
     std_batch = models.IntegerField()
     std_name = models.CharField(max_length=50)
-    std_id = models.CharField(max_length=50)
+    std_id = models.BigIntegerField()
+    std_email = models.EmailField(blank=True)
     club = models.ManyToManyField(Clubs, related_name='members', blank=True)
 
     class Meta():
@@ -42,9 +43,11 @@ class Applications(models.Model):
     std_batch = models.IntegerField()
     std_id = models.CharField(max_length=50)
     std_email = models.EmailField()
+    accept_membership = models.BooleanField(default=False)
 
     class Meta():
         ordering = ['club']
+        verbose_name_plural = 'Applications'
     def __str__(self):
-        return self.club.club_name
+        return f"{self.club} Batch {self.std_batch} id:{self.std_id}"
 

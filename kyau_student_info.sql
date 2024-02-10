@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2024 at 09:25 AM
+-- Generation Time: Feb 10, 2024 at 02:15 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -86,18 +86,18 @@ INSERT INTO `auth_permission` (`id`, `name`, `content_type_id`, `codename`) VALU
 (22, 'Can change session', 6, 'change_session'),
 (23, 'Can delete session', 6, 'delete_session'),
 (24, 'Can view session', 6, 'view_session'),
-(25, 'Can add general_ database', 7, 'add_general_database'),
-(26, 'Can change general_ database', 7, 'change_general_database'),
-(27, 'Can delete general_ database', 7, 'delete_general_database'),
-(28, 'Can view general_ database', 7, 'view_general_database'),
-(29, 'Can add clubs', 8, 'add_clubs'),
-(30, 'Can change clubs', 8, 'change_clubs'),
-(31, 'Can delete clubs', 8, 'delete_clubs'),
-(32, 'Can view clubs', 8, 'view_clubs'),
-(33, 'Can add department', 9, 'add_department'),
-(34, 'Can change department', 9, 'change_department'),
-(35, 'Can delete department', 9, 'delete_department'),
-(36, 'Can view department', 9, 'view_department'),
+(25, 'Can add clubs', 7, 'add_clubs'),
+(26, 'Can change clubs', 7, 'change_clubs'),
+(27, 'Can delete clubs', 7, 'delete_clubs'),
+(28, 'Can view clubs', 7, 'view_clubs'),
+(29, 'Can add department', 8, 'add_department'),
+(30, 'Can change department', 8, 'change_department'),
+(31, 'Can delete department', 8, 'delete_department'),
+(32, 'Can view department', 8, 'view_department'),
+(33, 'Can add general_ database', 9, 'add_general_database'),
+(34, 'Can change general_ database', 9, 'change_general_database'),
+(35, 'Can delete general_ database', 9, 'delete_general_database'),
+(36, 'Can view general_ database', 9, 'view_general_database'),
 (37, 'Can add applications', 10, 'add_applications'),
 (38, 'Can change applications', 10, 'change_applications'),
 (39, 'Can delete applications', 10, 'delete_applications'),
@@ -128,7 +128,7 @@ CREATE TABLE `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$600000$ltP7hcNLRLBMEDlKg3EIV5$hEtzjFUJSyELdqJN6f+/95afjwuJroAM/CUNjFTDjHQ=', '2024-02-08 04:20:38.151340', 1, 'admin', '', '', '', 1, 1, '2024-02-07 11:50:16.565989');
+(1, 'pbkdf2_sha256$600000$u98Q1A9YYlrjANv50IELZu$RVDMlJiyy+2gvl1gJEeU5W5/2tWE8WSWfBUy2M1cJLc=', '2024-02-10 13:12:35.495694', 1, 'admin', '', '', '', 1, 1, '2024-02-08 09:20:59.726270');
 
 -- --------------------------------------------------------
 
@@ -176,27 +176,71 @@ CREATE TABLE `django_admin_log` (
 --
 
 INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`, `action_flag`, `change_message`, `content_type_id`, `user_id`) VALUES
-(1, '2024-02-07 11:51:14.966471', '1', 'Computer Club', 1, '[{\"added\": {}}]', 8, 1),
-(2, '2024-02-07 11:51:17.668313', '2', 'Cultural Club', 1, '[{\"added\": {}}]', 8, 1),
-(3, '2024-02-07 11:51:19.869389', '3', 'Robotics Club', 1, '[{\"added\": {}}]', 8, 1),
-(4, '2024-02-07 11:54:33.067212', '2', 'Md. Al - Imran Sarker', 3, '', 7, 1),
-(5, '2024-02-07 11:54:33.107102', '1', 'Md. Al - Imran Sarker', 3, '', 7, 1),
-(6, '2024-02-07 12:22:37.464441', '4', 'SM Asifur Rahman', 1, '[{\"added\": {}}]', 7, 1),
-(7, '2024-02-07 12:22:59.395086', '5', 'Rashik Chowdhury', 1, '[{\"added\": {}}]', 7, 1),
-(8, '2024-02-07 12:23:22.913539', '6', 'Akash', 1, '[{\"added\": {}}]', 7, 1),
-(9, '2024-02-07 13:17:04.105971', '1', 'Computer Club', 2, '[{\"changed\": {\"fields\": [\"Club desc\"]}}]', 8, 1),
-(10, '2024-02-07 13:20:13.340637', '1', 'Computer Club', 2, '[{\"changed\": {\"fields\": [\"Club desc\"]}}]', 8, 1),
-(11, '2024-02-07 13:20:33.663679', '2', 'Cultural Club', 2, '[{\"changed\": {\"fields\": [\"Club desc\"]}}]', 8, 1),
-(12, '2024-02-07 13:20:42.604598', '3', 'Robotics Club', 2, '[{\"changed\": {\"fields\": [\"Club desc\"]}}]', 8, 1),
-(13, '2024-02-07 14:18:44.692667', '1', 'Computer Club', 2, '[{\"changed\": {\"fields\": [\"Club desc\"]}}]', 8, 1),
-(14, '2024-02-07 14:32:03.686154', '1', 'CSE', 1, '[{\"added\": {}}]', 9, 1),
-(15, '2024-02-07 14:32:06.261384', '2', 'EEE', 1, '[{\"added\": {}}]', 9, 1),
-(16, '2024-02-07 14:32:10.220730', '3', 'BBA', 1, '[{\"added\": {}}]', 9, 1),
-(17, '2024-02-07 14:32:17.610506', '4', 'MIS', 1, '[{\"added\": {}}]', 9, 1),
-(18, '2024-02-07 14:32:29.746499', '5', 'LLB', 1, '[{\"added\": {}}]', 9, 1),
-(19, '2024-02-07 14:32:47.044174', '6', 'TE', 1, '[{\"added\": {}}]', 9, 1),
-(20, '2024-02-07 14:32:51.374357', '7', 'LIS', 1, '[{\"added\": {}}]', 9, 1),
-(21, '2024-02-07 14:33:27.353218', '8', 'English And Litereture', 1, '[{\"added\": {}}]', 9, 1);
+(1, '2024-02-08 09:22:03.410898', '1', 'Cultural Club', 1, '[{\"added\": {}}]', 7, 1),
+(2, '2024-02-08 09:22:17.265659', '2', 'Computer Club', 1, '[{\"added\": {}}]', 7, 1),
+(3, '2024-02-08 09:22:22.832060', '3', 'Robotics Club', 1, '[{\"added\": {}}]', 7, 1),
+(4, '2024-02-08 09:22:55.650544', '1', 'CSE', 1, '[{\"added\": {}}]', 8, 1),
+(5, '2024-02-08 09:22:58.007739', '2', 'EEE', 1, '[{\"added\": {}}]', 8, 1),
+(6, '2024-02-08 09:23:01.616545', '3', 'BBA', 1, '[{\"added\": {}}]', 8, 1),
+(7, '2024-02-08 09:23:06.113125', '4', 'LLB', 1, '[{\"added\": {}}]', 8, 1),
+(8, '2024-02-08 09:23:27.237592', '5', 'Phermacy', 1, '[{\"added\": {}}]', 8, 1),
+(9, '2024-02-08 09:23:42.268752', '1', 'Md. Al - Imran Sarker', 1, '[{\"added\": {}}]', 9, 1),
+(10, '2024-02-08 09:23:50.433163', '2', 'SM Asifur Rahman', 1, '[{\"added\": {}}]', 9, 1),
+(11, '2024-02-08 09:24:00.005844', '3', 'Rashik Chowdhury', 1, '[{\"added\": {}}]', 9, 1),
+(12, '2024-02-08 09:24:09.759969', '4', 'Akash', 1, '[{\"added\": {}}]', 9, 1),
+(13, '2024-02-09 09:26:47.297118', '1', 'Computer Club', 2, '[{\"changed\": {\"fields\": [\"Accept membership\"]}}]', 10, 1),
+(14, '2024-02-09 09:26:50.943245', '2', 'Computer Club', 2, '[{\"changed\": {\"fields\": [\"Accept membership\"]}}]', 10, 1),
+(15, '2024-02-09 09:28:24.976777', '2', 'Computer Club', 2, '[{\"changed\": {\"fields\": [\"Accept membership\"]}}]', 10, 1),
+(16, '2024-02-09 09:35:58.207801', '2', 'Computer Club', 2, '[{\"changed\": {\"fields\": [\"Accept membership\"]}}]', 10, 1),
+(17, '2024-02-09 09:40:05.676044', '2', 'Computer Club', 2, '[{\"changed\": {\"fields\": [\"Accept membership\"]}}]', 10, 1),
+(18, '2024-02-09 09:40:10.665966', '1', 'Computer Club', 2, '[{\"changed\": {\"fields\": [\"Accept membership\"]}}]', 10, 1),
+(19, '2024-02-09 09:42:26.367525', '2', 'Computer Club', 2, '[{\"changed\": {\"fields\": [\"Accept membership\"]}}]', 10, 1),
+(20, '2024-02-09 09:42:29.601429', '1', 'Computer Club', 2, '[{\"changed\": {\"fields\": [\"Accept membership\"]}}]', 10, 1),
+(21, '2024-02-09 09:42:32.341174', '3', 'Cultural Club', 2, '[{\"changed\": {\"fields\": [\"Accept membership\"]}}]', 10, 1),
+(22, '2024-02-09 09:55:21.618559', '4', 'Computer Club', 1, '[{\"added\": {}}]', 10, 1),
+(23, '2024-02-09 09:55:26.089753', '4', 'Computer Club', 2, '[]', 10, 1),
+(24, '2024-02-09 09:55:28.614452', '1', 'Computer Club', 2, '[{\"changed\": {\"fields\": [\"Accept membership\"]}}]', 10, 1),
+(25, '2024-02-09 09:56:25.111774', '4', 'Computer Club', 2, '[{\"changed\": {\"fields\": [\"Accept membership\"]}}]', 10, 1),
+(26, '2024-02-10 03:29:20.717164', '4', 'Akash', 2, '[{\"changed\": {\"fields\": [\"Club\"]}}]', 9, 1),
+(27, '2024-02-10 03:32:41.907702', '3', 'Rashik Chowdhury', 2, '[{\"changed\": {\"fields\": [\"Club\"]}}]', 9, 1),
+(28, '2024-02-10 03:32:54.452461', '1', 'Md. Al - Imran Sarker', 2, '[{\"changed\": {\"fields\": [\"Club\"]}}]', 9, 1),
+(29, '2024-02-10 04:10:52.159813', '1', 'Md. Al - Imran Sarker', 2, '[{\"changed\": {\"fields\": [\"Club\"]}}]', 9, 1),
+(30, '2024-02-10 04:12:10.588141', '4', 'Akash', 2, '[{\"changed\": {\"fields\": [\"Club\"]}}]', 9, 1),
+(31, '2024-02-10 04:12:19.545696', '4', 'Akash', 2, '[{\"changed\": {\"fields\": [\"Club\"]}}]', 9, 1),
+(32, '2024-02-10 04:14:31.398305', '3', 'Rashik Chowdhury', 2, '[{\"changed\": {\"fields\": [\"Club\"]}}]', 9, 1),
+(33, '2024-02-10 04:14:39.123082', '1', 'Md. Al - Imran Sarker', 2, '[{\"changed\": {\"fields\": [\"Club\"]}}]', 9, 1),
+(34, '2024-02-10 04:17:13.936613', '1', 'Computer Club Batch 12 id:0622110105101010', 2, '[{\"changed\": {\"fields\": [\"Accept membership\"]}}]', 10, 1),
+(35, '2024-02-10 04:33:05.550819', '4', 'Akash', 2, '[{\"changed\": {\"fields\": [\"Std id\"]}}]', 9, 1),
+(36, '2024-02-10 04:33:11.161738', '3', 'Rashik Chowdhury', 2, '[{\"changed\": {\"fields\": [\"Std id\"]}}]', 9, 1),
+(37, '2024-02-10 04:33:18.583712', '1', 'Md. Al - Imran Sarker', 2, '[{\"changed\": {\"fields\": [\"Std id\"]}}]', 9, 1),
+(38, '2024-02-10 04:33:22.293067', '4', 'Akash', 2, '[]', 9, 1),
+(39, '2024-02-10 04:33:26.041693', '3', 'Rashik Chowdhury', 2, '[]', 9, 1),
+(40, '2024-02-10 04:33:31.206513', '5', 'Akash', 2, '[{\"changed\": {\"fields\": [\"Std id\"]}}]', 9, 1),
+(41, '2024-02-10 04:33:35.899757', '2', 'SM Asifur Rahman', 2, '[{\"changed\": {\"fields\": [\"Std id\"]}}]', 9, 1),
+(42, '2024-02-10 04:34:12.988428', '5', 'Mamun', 2, '[{\"changed\": {\"fields\": [\"Std name\", \"Std id\"]}}]', 9, 1),
+(43, '2024-02-10 04:47:58.289887', '1', 'Md. Al - Imran Sarker', 2, '[{\"changed\": {\"fields\": [\"Std id\"]}}]', 9, 1),
+(44, '2024-02-10 04:48:09.281389', '5', 'Mamun', 2, '[{\"changed\": {\"fields\": [\"Std id\"]}}]', 9, 1),
+(45, '2024-02-10 04:48:16.306107', '4', 'Akash', 2, '[{\"changed\": {\"fields\": [\"Std id\"]}}]', 9, 1),
+(46, '2024-02-10 04:48:20.613393', '3', 'Rashik Chowdhury', 2, '[{\"changed\": {\"fields\": [\"Std id\"]}}]', 9, 1),
+(47, '2024-02-10 04:48:24.914102', '2', 'SM Asifur Rahman', 2, '[{\"changed\": {\"fields\": [\"Std id\"]}}]', 9, 1),
+(48, '2024-02-10 04:49:10.902406', '3', 'Rashik Chowdhury', 2, '[{\"changed\": {\"fields\": [\"Std id\"]}}]', 9, 1),
+(49, '2024-02-10 04:50:48.293302', '5', 'Mamun', 2, '[{\"changed\": {\"fields\": [\"Std id\"]}}]', 9, 1),
+(50, '2024-02-10 04:50:52.700626', '4', 'Akash', 2, '[{\"changed\": {\"fields\": [\"Std id\"]}}]', 9, 1),
+(51, '2024-02-10 04:50:57.494714', '2', 'SM Asifur Rahman', 2, '[{\"changed\": {\"fields\": [\"Std id\"]}}]', 9, 1),
+(52, '2024-02-10 04:51:01.608009', '1', 'Md. Al - Imran Sarker', 2, '[{\"changed\": {\"fields\": [\"Std id\"]}}]', 9, 1),
+(53, '2024-02-10 04:51:07.488329', '3', 'Rashik Chowdhury', 2, '[{\"changed\": {\"fields\": [\"Std id\"]}}]', 9, 1),
+(54, '2024-02-10 12:57:33.975544', '12', 'Computer Club Batch 12 id:10', 3, '', 10, 1),
+(55, '2024-02-10 12:57:34.004467', '11', 'Computer Club Batch 12 id:7', 3, '', 10, 1),
+(56, '2024-02-10 12:57:34.020609', '10', 'Computer Club Batch 12 id:3', 3, '', 10, 1),
+(57, '2024-02-10 12:57:34.046356', '9', 'Computer Club Batch 12 id:0622110105101004', 3, '', 10, 1),
+(58, '2024-02-10 12:57:34.070476', '8', 'Computer Club Batch 12 id:0622110105101004', 3, '', 10, 1),
+(59, '2024-02-10 12:57:34.096223', '7', 'Computer Club Batch 12 id:0622110105101004', 3, '', 10, 1),
+(60, '2024-02-10 12:57:34.113178', '6', 'Computer Club Batch 12 id:0622110105101004', 3, '', 10, 1),
+(61, '2024-02-10 12:57:34.138110', '5', 'Computer Club Batch 12 id:0622110105101004', 3, '', 10, 1),
+(62, '2024-02-10 12:57:34.204116', '4', 'Computer Club Batch 12 id:0622110105101009', 3, '', 10, 1),
+(63, '2024-02-10 12:57:34.221885', '1', 'Computer Club Batch 12 id:0622110105101010', 3, '', 10, 1),
+(64, '2024-02-10 12:57:34.237848', '3', 'Cultural Club Batch 16 id:0622123456101009', 3, '', 10, 1),
+(65, '2024-02-10 13:12:55.316545', '13', 'Computer Club Batch 12 id:7', 3, '', 10, 1);
 
 -- --------------------------------------------------------
 
@@ -221,9 +265,9 @@ INSERT INTO `django_content_type` (`id`, `app_label`, `model`) VALUES
 (4, 'auth', 'user'),
 (5, 'contenttypes', 'contenttype'),
 (10, 'general', 'applications'),
-(8, 'general', 'clubs'),
-(9, 'general', 'department'),
-(7, 'general', 'general_database'),
+(7, 'general', 'clubs'),
+(8, 'general', 'department'),
+(9, 'general', 'general_database'),
 (6, 'sessions', 'session');
 
 -- --------------------------------------------------------
@@ -244,30 +288,27 @@ CREATE TABLE `django_migrations` (
 --
 
 INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
-(1, 'contenttypes', '0001_initial', '2024-02-07 11:02:46.923607'),
-(2, 'auth', '0001_initial', '2024-02-07 11:02:51.716386'),
-(3, 'admin', '0001_initial', '2024-02-07 11:02:53.327388'),
-(4, 'admin', '0002_logentry_remove_auto_add', '2024-02-07 11:02:53.353675'),
-(5, 'admin', '0003_logentry_add_action_flag_choices', '2024-02-07 11:02:53.383574'),
-(6, 'contenttypes', '0002_remove_content_type_name', '2024-02-07 11:02:53.807307'),
-(7, 'auth', '0002_alter_permission_name_max_length', '2024-02-07 11:02:54.310044'),
-(8, 'auth', '0003_alter_user_email_max_length', '2024-02-07 11:02:54.438508'),
-(9, 'auth', '0004_alter_user_username_opts', '2024-02-07 11:02:54.471654'),
-(10, 'auth', '0005_alter_user_last_login_null', '2024-02-07 11:02:54.865980'),
-(11, 'auth', '0006_require_contenttypes_0002', '2024-02-07 11:02:54.923715'),
-(12, 'auth', '0007_alter_validators_add_error_messages', '2024-02-07 11:02:54.988540'),
-(13, 'auth', '0008_alter_user_username_max_length', '2024-02-07 11:02:55.132067'),
-(14, 'auth', '0009_alter_user_last_name_max_length', '2024-02-07 11:02:55.851281'),
-(15, 'auth', '0010_alter_group_name_max_length', '2024-02-07 11:02:56.044704'),
-(16, 'auth', '0011_update_proxy_permissions', '2024-02-07 11:02:56.071883'),
-(17, 'auth', '0012_alter_user_first_name_max_length', '2024-02-07 11:02:56.171497'),
-(18, 'general', '0001_initial', '2024-02-07 11:02:56.339812'),
-(19, 'general', '0002_alter_general_database_options_and_more', '2024-02-07 11:02:57.575263'),
-(20, 'sessions', '0001_initial', '2024-02-07 11:02:57.837120'),
-(21, 'general', '0003_clubs_remove_general_database_club1_and_more', '2024-02-07 11:28:28.109119'),
-(22, 'general', '0004_clubs_club_desc', '2024-02-07 13:10:43.959825'),
-(23, 'general', '0005_alter_clubs_club_desc_and_more', '2024-02-07 14:13:18.866207'),
-(24, 'general', '0006_department_applications', '2024-02-07 14:31:38.276862');
+(1, 'contenttypes', '0001_initial', '2024-02-08 09:20:00.177096'),
+(2, 'auth', '0001_initial', '2024-02-08 09:20:05.078913'),
+(3, 'admin', '0001_initial', '2024-02-08 09:20:06.438616'),
+(4, 'admin', '0002_logentry_remove_auto_add', '2024-02-08 09:20:06.492322'),
+(5, 'admin', '0003_logentry_add_action_flag_choices', '2024-02-08 09:20:06.711571'),
+(6, 'contenttypes', '0002_remove_content_type_name', '2024-02-08 09:20:07.536939'),
+(7, 'auth', '0002_alter_permission_name_max_length', '2024-02-08 09:20:08.166801'),
+(8, 'auth', '0003_alter_user_email_max_length', '2024-02-08 09:20:08.290594'),
+(9, 'auth', '0004_alter_user_username_opts', '2024-02-08 09:20:08.319747'),
+(10, 'auth', '0005_alter_user_last_login_null', '2024-02-08 09:20:08.719644'),
+(11, 'auth', '0006_require_contenttypes_0002', '2024-02-08 09:20:08.742988'),
+(12, 'auth', '0007_alter_validators_add_error_messages', '2024-02-08 09:20:08.783887'),
+(13, 'auth', '0008_alter_user_username_max_length', '2024-02-08 09:20:08.962966'),
+(14, 'auth', '0009_alter_user_last_name_max_length', '2024-02-08 09:20:09.086249'),
+(15, 'auth', '0010_alter_group_name_max_length', '2024-02-08 09:20:09.220147'),
+(16, 'auth', '0011_update_proxy_permissions', '2024-02-08 09:20:09.284654'),
+(17, 'auth', '0012_alter_user_first_name_max_length', '2024-02-08 09:20:09.362167'),
+(18, 'general', '0001_initial', '2024-02-08 09:20:13.237710'),
+(19, 'sessions', '0001_initial', '2024-02-08 09:20:13.604030'),
+(20, 'general', '0002_alter_applications_options_and_more', '2024-02-09 13:28:37.951986'),
+(21, 'general', '0003_alter_general_database_std_id', '2024-02-10 04:50:34.364873');
 
 -- --------------------------------------------------------
 
@@ -286,7 +327,7 @@ CREATE TABLE `django_session` (
 --
 
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
-('f5xu608ti98ebqsd0owo3bmuwuuothek', '.eJxVjDkOwjAUBe_iGll24pWSnjNY_ktwANlSnFSIu0OkFNC-mXkvkfK2lrR1XtJM4iy0OP1ukPHBdQd0z_XWJLa6LjPIXZEH7fLaiJ-Xw_07KLmXb81BG9DoAMkboMEEtDDm4IwNmMlxdOQHCBBoilZNkdkbHo11oLSKJN4f-v84Rg:1rXvtu:_-_kEqgtCECJhS77Ep5F6TlyB0tHBnPAH-s6ZrN2CrE', '2024-02-22 04:20:38.202512');
+('hdm50xtib7op0vk3kv4ea7v3sffvtwdw', '.eJxVjEEOwiAQRe_C2hCEwlCX7nsGMjOAVA0kpV0Z765NutDtf-_9lwi4rSVsPS1hjuIizuL0uxHyI9UdxDvWW5Pc6rrMJHdFHrTLqcX0vB7u30HBXr61RmeMUQzECTyOVsVsPTitkFxUmtKgc2aXwVkgUINCNhlHbzIP4Em8P-CYOAQ:1rYn9n:6f59i7IfzYDnu2Bt2EO4C5i2EgskgNYmwHZbHDeB-lI', '2024-02-24 13:12:35.536588');
 
 -- --------------------------------------------------------
 
@@ -296,20 +337,21 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 
 CREATE TABLE `general_applications` (
   `id` bigint(20) NOT NULL,
-  `std_dept_id` bigint(20) NOT NULL,
   `std_name` varchar(50) NOT NULL,
   `std_batch` int(11) NOT NULL,
   `std_id` varchar(50) NOT NULL,
   `std_email` varchar(254) NOT NULL,
-  `club_id` bigint(20) NOT NULL
+  `accept_membership` tinyint(1) NOT NULL,
+  `club_id` bigint(20) NOT NULL,
+  `std_dept_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `general_applications`
 --
 
-INSERT INTO `general_applications` (`id`, `std_dept_id`, `std_name`, `std_batch`, `std_id`, `std_email`, `club_id`) VALUES
-(1, 1, 'Md. Al - Imran Sarker', 12, '0622110105101010', 'imranthelegend12@gmail.com', 1);
+INSERT INTO `general_applications` (`id`, `std_name`, `std_batch`, `std_id`, `std_email`, `accept_membership`, `club_id`, `std_dept_id`) VALUES
+(14, 'Md. Al - Imran Sarker', 12, '10', 'turzo@gmail.com', 0, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -328,9 +370,9 @@ CREATE TABLE `general_clubs` (
 --
 
 INSERT INTO `general_clubs` (`id`, `club_name`, `club_desc`) VALUES
-(1, 'Computer Club', 'This is the description of the computer club. This description is added by admin.\r\n\r\nWhy should you join KYAU Computer Club ( KYAUCC ) ?\r\nHere are the motive,\r\n1. Skill Development\r\n2. Project Experience\r\n3. Career Development\r\n4. Networking Opportunities\r\n5. Hackathons and Competitions\r\n6. Fun and Social Interaction\r\n7. Future Opportunities'),
-(2, 'Cultural Club', 'This is the description of the Culturul club. This description is added by admin.'),
-(3, 'Robotics Club', 'This is the description of the Robotics club. This description is added by admin.');
+(1, 'Cultural Club', 'This is club description.'),
+(2, 'Computer Club', 'This is club description.'),
+(3, 'Robotics Club', 'This is club description.');
 
 -- --------------------------------------------------------
 
@@ -351,11 +393,8 @@ INSERT INTO `general_department` (`id`, `dept_name`) VALUES
 (1, 'CSE'),
 (2, 'EEE'),
 (3, 'BBA'),
-(4, 'MIS'),
-(5, 'LLB'),
-(6, 'TE'),
-(7, 'LIS'),
-(8, 'English And Litereture');
+(4, 'LLB'),
+(5, 'Phermacy');
 
 -- --------------------------------------------------------
 
@@ -365,21 +404,25 @@ INSERT INTO `general_department` (`id`, `dept_name`) VALUES
 
 CREATE TABLE `general_general_database` (
   `id` bigint(20) NOT NULL,
-  `std_dept_id` bigint(20) NOT NULL,
   `std_batch` int(11) NOT NULL,
   `std_name` varchar(50) NOT NULL,
-  `std_id` varchar(50) NOT NULL
+  `std_id` bigint(20) NOT NULL,
+  `std_dept_id` bigint(20) NOT NULL,
+  `std_email` varchar(254) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `general_general_database`
 --
 
-INSERT INTO `general_general_database` (`id`, `std_dept_id`, `std_batch`, `std_name`, `std_id`) VALUES
-(3, 0, 12, 'Md. Al - Imran Sarker', '0622110105101010'),
-(4, 0, 12, 'SM Asifur Rahman', '0622110105101009'),
-(5, 0, 12, 'Rashik Chowdhury', '0622110105101007'),
-(6, 0, 12, 'Akash', '0622110105101006');
+INSERT INTO `general_general_database` (`id`, `std_batch`, `std_name`, `std_id`, `std_dept_id`, `std_email`) VALUES
+(1, 12, 'Md. Al - Imran Sarker', 10, 1, ''),
+(2, 12, 'SM Asifur Rahman', 9, 1, ''),
+(3, 12, 'Rashik Chowdhury', 7, 1, ''),
+(4, 12, 'Akash', 6, 1, ''),
+(5, 12, 'Mamun', 4, 1, ''),
+(6, 12, 'Md. Farhad Reza', 3, 1, 'farhad@gmail.com'),
+(7, 12, 'Tanjin Jani Turzo', 1, 1, 'turzo@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -392,17 +435,6 @@ CREATE TABLE `general_general_database_club` (
   `general_database_id` bigint(20) NOT NULL,
   `clubs_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `general_general_database_club`
---
-
-INSERT INTO `general_general_database_club` (`id`, `general_database_id`, `clubs_id`) VALUES
-(5, 3, 1),
-(6, 3, 2),
-(7, 4, 2),
-(8, 5, 3),
-(9, 6, 1);
 
 --
 -- Indexes for dumped tables
@@ -487,7 +519,7 @@ ALTER TABLE `django_session`
 ALTER TABLE `general_applications`
   ADD PRIMARY KEY (`id`),
   ADD KEY `general_applications_club_id_afdd7e82_fk_general_clubs_id` (`club_id`),
-  ADD KEY `general_applications_std_dept_id_cc8947ac` (`std_dept_id`);
+  ADD KEY `general_applications_std_dept_id_cc8947ac_fk_general_d` (`std_dept_id`);
 
 --
 -- Indexes for table `general_clubs`
@@ -506,7 +538,7 @@ ALTER TABLE `general_department`
 --
 ALTER TABLE `general_general_database`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `general_general_database_std_dept_id_02ff9b9f` (`std_dept_id`);
+  ADD KEY `general_general_data_std_dept_id_02ff9b9f_fk_general_d` (`std_dept_id`);
 
 --
 -- Indexes for table `general_general_database_club`
@@ -560,7 +592,7 @@ ALTER TABLE `auth_user_user_permissions`
 -- AUTO_INCREMENT for table `django_admin_log`
 --
 ALTER TABLE `django_admin_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `django_content_type`
@@ -572,13 +604,13 @@ ALTER TABLE `django_content_type`
 -- AUTO_INCREMENT for table `django_migrations`
 --
 ALTER TABLE `django_migrations`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `general_applications`
 --
 ALTER TABLE `general_applications`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `general_clubs`
@@ -590,19 +622,19 @@ ALTER TABLE `general_clubs`
 -- AUTO_INCREMENT for table `general_department`
 --
 ALTER TABLE `general_department`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `general_general_database`
 --
 ALTER TABLE `general_general_database`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `general_general_database_club`
 --
 ALTER TABLE `general_general_database_club`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
@@ -648,6 +680,12 @@ ALTER TABLE `django_admin_log`
 ALTER TABLE `general_applications`
   ADD CONSTRAINT `general_applications_club_id_afdd7e82_fk_general_clubs_id` FOREIGN KEY (`club_id`) REFERENCES `general_clubs` (`id`),
   ADD CONSTRAINT `general_applications_std_dept_id_cc8947ac_fk_general_d` FOREIGN KEY (`std_dept_id`) REFERENCES `general_department` (`id`);
+
+--
+-- Constraints for table `general_general_database`
+--
+ALTER TABLE `general_general_database`
+  ADD CONSTRAINT `general_general_data_std_dept_id_02ff9b9f_fk_general_d` FOREIGN KEY (`std_dept_id`) REFERENCES `general_department` (`id`);
 
 --
 -- Constraints for table `general_general_database_club`

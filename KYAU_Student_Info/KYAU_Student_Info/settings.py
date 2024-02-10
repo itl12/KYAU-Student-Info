@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-!s+8r#8ac8e*qij+&c)p^(vf$k%h(ljg*m633d$!zs0xbh0fxy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -90,6 +90,9 @@ DATABASES = {
         'PASSWORD': '',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
+        # 'OPTIONS': {
+        #     'sql_mode': 'STRICT_TRANS_TABLES',
+        # },
     }
 }
 

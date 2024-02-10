@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<div class="container mt-4 ">
+    
+    <div class="w-full sm:w-1/2 my-3 p-3 bg-body-secondary rounded-3">
+        <form method="POST"> {% csrf_token %}
+            {% for field in form %}
+            <div class="mb-3">
+              <label for="{{field.id_for_label }}" class="form-label">{{ field.label }}</label>
+              {{ field }}
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+</div>
+
+
+{% endblock %}

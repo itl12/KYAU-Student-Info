@@ -12,6 +12,29 @@
     <h4 class="py-2 text-success text-center ">{{ club.club_name }}</h4>
     <h6>{{ club.club_desc }}</h6>
     <h4>Total club members : <strong>{{ no_of_members }}</strong></h4>
+
+    {% if no_of_members %}
+    <h5>All Of Your Friends Who Are Member Of This Club</h5>
+    <div class="overflow-x-scroll">
+        <table class="table table-bordered">
+            <tr>
+                <th>Department</th>
+                <th>Name</th>
+                <th>Batch</th>
+                <th>ID</th>
+            </tr>
+            {% for member in members %}
+                <tr>
+                    <td>{{ member.std_dept }}</td>
+                    <td>{{ member.std_name }}</td>
+                    <td>{{ member.std_batch }}</td>
+                    <td>{{ member.std_id }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+
     <a href="{% url 'apply_for_registration' pk=club.id %}" class="my-3 btn btn-success btn-sm">Apply For Registration</a>
 </div>
 

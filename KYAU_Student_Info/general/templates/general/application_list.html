@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block navitem %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'general:club_details' pk=club_name.id %}">Members</a>
+  </li>
+{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    
+   <h4>Applications to be registered in {{ club_name }}</h4>
+    
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Dept</th>
+            <th>Student Name</th>
+            <th>Batch</th>
+            <th>Id</th>
+        </tr>
+        {% for application in application_list %}
+            <tr>
+                <td>{{ application.std_dept }}</td>
+                <td><a href="{% url 'general:application' pk=application.id %}">{{ application.std_name }}</a></td>
+                <td>{{ application.std_batch }}</td>
+                <td>{{ application.std_id }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+
+
+{% endblock %}

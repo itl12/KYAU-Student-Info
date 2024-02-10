@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block navitem %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'general:club_details' pk=application.club.id %}">Members</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'general:application_list' pk=application.club.id %}">Applications</a>
+</li>
+{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    
+   <h4>Application to be registered in {{ application.club }} </h4>
+    
+    <div class="p-4 bg-body-tertiary rounded-3">
+        <p class="text-success">Department : {{ application.std_dept }}</p>
+        <p class="text-success">Name : {{ application.std_name }}</p>
+        <p class="text-success">Batch : {{ application.std_batch }}</p>
+        <p class="text-success">ID : {{ application.std_id }}</p>
+        <p class="text-success">Email : {{ application.std_email }}</p>
+        <div class="my-3">
+            <a href="{% url 'general:accept_application' pk=application.id %}" class="btn btn-success btn-sm">Accept</a>
+            <a href="{% url 'general:delete_application' pk=application.id %}" class="btn btn-danger btn-sm">Decline</a>
+            <a href="{% url 'general:application_list' pk=application.club.id %}" class="btn btn-warning btn-sm">Keep pending</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -2,13 +2,37 @@
 
 {% block body %}
 
+{% if no_of_members %}
+<h5 class="py-2 text-bg-secondary text-center rounded-3">All the members of {{ club }} total {{ no_of_members }}</h5>
+    <div class="container mt-4  overflow-x-scroll">
+        <table class="table table-bordered">
+            <tr>
+                <th>Department</th>
+                <th>Name</th>
+                <th>Batch</th>
+                <th>ID</th>
+                <th>Email</th>
+            </tr>
+            {% for member in club_members %}
+                <tr>
+                    <td>{{ member.std_dept }}</td>
+                    <td>{{ member.std_name }}</td>
+                    <td>{{ member.std_batch }}</td>
+                    <td>{{ member.std_id }}</td>
+                    <td>{{ member.std_email }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% else %}
+<h5 class="py-2 text-bg-danger text-center rounded-3">No members in this club yet!!</h5>
+{% endif %}
 
-
-    
-        
-        
 <div class="container my-5">
-    <a href="{% url 'general:application_list' pk=club.id %}" class="btn btn-secondary">See All Applications</a>
+    <h5>Number of pending application : {{ no_of_application }} </h5>
+    {% if no_of_application %}
+    <a href="{% url 'general:application_list' pk=club.id %}" class="btn btn-secondary mt-3">See All Applications</a>
+    {% endif %}
 </div>
 
 
