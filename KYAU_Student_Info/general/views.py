@@ -68,6 +68,10 @@ def accept_application(request,pk):
     application = models.Applications.objects.get(pk=pk)
     application.accept_membership = True
     application.save()
+    std = models.General_Database.objects.filter(std_dept=application.std_dept,
+                                                  std_batch=application.std_batch, std_id=application.std_id).first()
+    std.club.add(application.club.id)
+    std.save()
     return redirect(reverse('general:application_list', kwargs={'pk': application.club.id }))
 
 @login_required
